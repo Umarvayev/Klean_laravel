@@ -26,8 +26,8 @@ class PageController extends Controller
         return view('contact');
     }
 
-    // public function main()
-    // {
-    //     return view('main');
-    // }
+    public function project()
+    {
+        return view('project');
+    }
 }

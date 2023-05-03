@@ -11,15 +11,10 @@
             <a href="/" class="nav-item nav-link active">Bosh sahifa</a>
             <a href="{{ route('about')}}" class="nav-item nav-link">biz haqimizda</a>
             <a href="{{ route('service')}}" class="nav-item nav-link">bizning xizmatlar</a>
-            <a href="project.html" class="nav-item nav-link">Project</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu rounded-0 m-0">
-                    <a href="blog.html" class="dropdown-item">Latest Blog</a>
-                    <a href="single.html" class="dropdown-item">Blog Detail</a>
-                </div>
+            <a href="{{ route('project')}}" class="nav-item nav-link">Project</a>
+            <a href="{{ route('posts.index')}}" class="nav-item nav-link">bizning postlar</a>
             </div>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="{{ route('contact')}}" class="nav-item nav-link">biz bilan bog'lanish</a>
         </div>
         <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Get A Quote</a>
     </div>
