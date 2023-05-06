@@ -12,20 +12,9 @@ class PostController extends Controller
      */
     public function index()
     {
-    //   $newPost = new Post;
-    //   $newPost -> title = 'new post';
-    //   $newPost -> short_content = 'new post short_content';
-    //   $newPost -> content = 'new post content';
-    //   $newPost -> photo = 'new_post.jpg ';
+        $posts = Post::all();
 
-         $newPost = Post::create([
-            'title'=>'5',
-            'short_content'=>'short',
-            'content'=>'content',
-            'photo'=>'photo.jpg'
-         ]);
-      return 'success ';
-        // return view('posts.index');
+        return view('posts.index')->with('posts', $posts);
     }
 
     /**
@@ -47,9 +36,12 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Post $post)
     {
-        //
+        return view('posts.show', [$post])->with([
+            'post' => $post,
+            'recent_posts' => Post::latest()->get()->except($post->id)->take(5)
+        ]);
     }
 
     /**
