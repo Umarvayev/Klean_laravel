@@ -14,21 +14,28 @@
                 <form action="{{ route('posts.store') }}" method="POST">
                     @csrf
                     <div class="control-group">
-                        <input type="text" class="form-control p-4" name="title" placeholder="Sarlavha" required="required" />
-                        <p class="help-block text-danger"></p>
+                        <input type="text" class="form-control p-4" name="title" value="{{ old('title') }}" placeholder="Sarlavha"  />
+                        @error('title')
+                            <p class="help-block text-danger">{{ $message }}</p>
+                        @enderror
+
                     </div>
-                    <div class="control-group">
+                    {{-- <div class="control-group">
                         <input type="file" class="form-control p-4" id="file" placeholder="photo" />
                         <p class="help-block text-danger"></p>
+                    </div> --}}
+                    <div class="control-group">
+                        <input type="text" class="form-control p-4" name="short_content" value="{{ old('short_content') }}" placeholder="Qisqacha tasnif" />
+                            @error('short_content')
+                            <p class="help-block text-danger">{{ $message }}</p>
+                            @enderror
                     </div>
                     <div class="control-group">
-                        <input type="text" class="form-control p-4" name="short_content" placeholder="Qisqacha tasnif"
-                            required="required" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <textarea class="form-control p-4" rows="6" name="content" placeholder="maqola" required="required"></textarea>
-                        <p class="help-block text-danger"></p>
+                        <textarea class="form-control p-4" rows="6" name="content"  value="{{ old('content') }}"placeholder="maqola" ></textarea>
+                        @error('content')
+                        <p class="help-block text-danger">{{ $message }}</p>
+                        @enderror
+                </div>
                     </div>
                     <div>
                         <button class="btn btn-primary btn-block py-3 px-5" type="submit">Saqlash</button>
