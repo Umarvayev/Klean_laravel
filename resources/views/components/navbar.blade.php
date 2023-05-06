@@ -16,6 +16,6 @@
             </div>
             <a href="{{ route('contact')}}" class="nav-item nav-link">biz bilan bog'lanish</a>
         </div>
-        <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Get A Quote</a>
+        <a href="{{ route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block">post yaratish</a>
     </div>
 </nav>
