@@ -11,19 +11,20 @@
         <div class="col-lg-7 mb-5 mb-lg-0">
             <div class="contact-form">
                 <div id="success"></div>
-                <form action="{{ route('posts.store') }}" method="POST">
+                <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="control-group">
                         <input type="text" class="form-control p-4" name="title" value="{{ old('title') }}" placeholder="Sarlavha"  />
                         @error('title')
                             <p class="help-block text-danger">{{ $message }}</p>
                         @enderror
-
                     </div>
-                    {{-- <div class="control-group">
-                        <input type="file" class="form-control p-4" id="file" placeholder="photo" />
-                        <p class="help-block text-danger"></p>
-                    </div> --}}
+                    <div class="control-group">
+                        <input name="photo" type="file" class="form-control p-4" id="subject" placeholder="photo" />
+                        @error('photo')
+                        <p class="help-block text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
                     <div class="control-group">
                         <input type="text" class="form-control p-4" name="short_content" value="{{ old('short_content') }}" placeholder="Qisqacha tasnif" />
                             @error('short_content')
