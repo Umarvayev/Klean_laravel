@@ -12,6 +12,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
+                <div class="text-right">
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ route('posts.edit', ['post' => $post->id])}}">
+                        Ozgartirish
+                    </a>
+                    <a class="btn btn-sm btn-outline-danger" href="{{ route('posts.destroy', ['post' => $post->id])}}">
+                        O'chirib tashlash
+                    </a>
+                </div>
                 <div class="mb-5">
                     <div class="d-flex mb-2">
                         <a class="text-secondary text-uppercase font-weight-medium" href="">Admin</a>
