@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(3);
 
         return view('posts.index')->with('posts', $posts);
     }
@@ -101,7 +101,7 @@ class PostController extends Controller
         if(isset($post->photo)){
             Storage::delete($post->photo);
         }
-        
+
         $post->delete();
 
         return redirect()->route('posts.index');
