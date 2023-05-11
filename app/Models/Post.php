@@ -11,10 +11,11 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-    'title',
-    'short_content',
-    'content',
-    'photo'
+        'user_id',
+        'title',
+        'short_content',
+        'content',
+        'photo'
     ];
 
     public function comments()
@@ -24,6 +25,6 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);//belongsto bu tegishli tegani
+        return $this->belongsTo(User::class); //belongsto bu tegishli tegani
     }
 }
