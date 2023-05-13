@@ -20,6 +20,17 @@
                         @enderror
                     </div>
                     <div class="control-group">
+                        {{-- <input type="text" class="form-control p-4" name="category" value="{{ old('title') }}" placeholder="Kategoriya"  /> --}}
+                        {{-- @error('title')
+                            <p class="help-block text-danger">{{ $message }}</p>
+                        @enderror --}}
+                        <select name="category_id">
+                            @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="control-group">
                         <input name="photo" type="file" class="form-control p-4" id="subject" placeholder="photo" />
                         @error('photo')
                         <p class="help-block text-danger">{{ $message }}</p>
